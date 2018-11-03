@@ -1,3 +1,11 @@
-# sope
+# SOUP Editor
 
-SendOut Pattern Editor
+## Technologies
+
+*  NodeJS
+*  Firebase
+
+## To get the dependencies
+```
+$ npm install
+```

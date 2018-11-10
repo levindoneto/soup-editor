@@ -13,3 +13,9 @@ var soupDB = firebase.initializeApp(config);
 
 console.log(soupDB.storage());
 console.log(soupDB.database());
+
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('clients/' + userId);
+}
+
+console.log(writeUserData("76i0rQrVl1XCh82zwKEx", "name", "email@a.com", "imageUrl"));

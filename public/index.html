@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>SOUP Editor</title>
+  <link rel='shortcut icon' type='image/x-icon' href='resources/favicon.ico' />
   <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
   <script src="index.js"></script>
   <script src="dist/jsoneditor.js"></script>
@@ -50,6 +51,7 @@
       }
     }
     var blob = new Blob([editor.getText()], {type: 'application/json;charset=utf-8'});
+    addTrainingSet("otoneuro", editor.getText(), true);
     saveAs(blob, fname);
   };
 </script>

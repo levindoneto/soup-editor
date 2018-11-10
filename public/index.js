@@ -8,14 +8,18 @@ var config = {
   messagingSenderId: "903504320118"
 };
 
-// Initi DB
+// Init DB
 var soupDB = firebase.initializeApp(config);
 
-console.log(soupDB.storage());
-console.log(soupDB.database());
-
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('clients/' + userId);
+function testData(data) {
+  console.log("data: ", JSON.parse(data));
+  console.log("type data: ", typeof data);
 }
 
-console.log(writeUserData("76i0rQrVl1XCh82zwKEx", "name", "email@a.com", "imageUrl"));
+function addTrainingSet(clientId, trainingSet, goToProduction) {
+  firebase.database().ref('clients/' + clientId).set({
+    updateDate: new Date().toDateString(),
+    trainingSet: JSON.parse(trainingSet),
+    goToProduction: goToProduction
+  });
+}

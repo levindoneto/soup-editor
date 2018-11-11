@@ -18,6 +18,7 @@ function saveTrainingSet(clientId, goToProduction) {
 * @return {void} It only loads the training set into the editor.
 */
 function loadTrainingSet(clientId, loadProd) {
-    console.log('load');
-    //firebase.database().ref('clients/' + clientId);
+    firebase.database().ref('clients/' + clientId).once('value').then(function(snapshot) {
+        editor.setText(JSON.stringify(snapshot.val().trainingSet));
+    });
 }

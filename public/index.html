@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
+
+<head>
     <title>SOUP Editor</title>
     <link rel='shortcut icon' type='image/x-icon' href='resources/favicon.ico' />
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
@@ -12,28 +13,31 @@
     <link href="style/soup.css" rel="stylesheet" type="text/css">
     <link href="style/buttons.css" rel="stylesheet" type="text/css">
     <link href="dist/jsoneditor.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <input type="button" id="importFile" value="Importar" onclick="document.getElementById('importTrainingSet').click();" />
-    <input type="file" id="importTrainingSet" accept=".json" style="display:none"/>
-    <input type="button" id="loadTrainingSet" value="Carregar" onclick="loadTrainingSet('otoneuro', true);"/>
-    <input type="button" id="exportTrainingSet" value="Exportar" onclick="exportTrainingSet();"/>
-    <input type="button" id="saveTrainingSet" value="Salvar" onclick="saveTrainingSet('otoneuro', true);"/>
-    
-    <div id="jsoneditor"></div>
-    
+</head>
+
+<body>
+    <div class="btn-group button">
+        <input class="button" type="button" id="importFile" value="Importar" onclick="document.getElementById('importTrainingSet').click();" />
+        <input type="file" id="importTrainingSet" accept=".json" style="display:none" />
+        <input class="button" type="button" id="loadTrainingSet" value="Carregar" onclick="loadTrainingSet('otoneuro', true);" />
+        <input class="button" type="button" id="exportTrainingSet" value="Exportar" onclick="exportTrainingSet();" />
+        <input class="button" type="button" id="saveTrainingSet" value="Salvar" onclick="saveTrainingSet('otoneuro', true);" />
+    </div>
+    <div style="clear:both" id="jsoneditor"></div>
+
     <script src="dist/jsoneditor.js"></script>
     <script>
         var editor = new JSONEditor(document.getElementById('jsoneditor'));
         FileReaderJS.setupInput(document.getElementById('importTrainingSet'), {
-        readAsDefault: 'Text',
-        on: {
-          load: function (event, file) {
-            editor.setText(event.target.result);
-          }
-        }
-      });
+            readAsDefault: 'Text',
+            on: {
+                load: function (event, file) {
+                    editor.setText(event.target.result);
+                }
+            }
+        });
 
     </script>
-  </body>
+</body>
+
 </html>

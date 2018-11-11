@@ -1,3 +1,19 @@
-.button {
-    width: 40px;
+.btn-group .button {
+    background-color: #3883fa;
+    border: 0px solid white;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+
+    cursor: pointer;
+}
+.btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+.btn-group .button:hover {
+    background-color: #089FDB;
 }
